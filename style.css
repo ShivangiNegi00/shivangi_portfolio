@@ -1,0 +1,135 @@
+* {
+    box-sizing : border-box;
+    margin : 0;
+    padding : 0;
+    font-family : Arial, Helvetica, sans-serif;
+    line-height: 1;
+}
+
+body {
+    color : #221145;
+    /* controls content behaviour when it overflows the container's dimensions in this case content is cut off */
+    overflow: hidden;  
+    background: #111111;
+}
+
+#score {
+    position: fixed;
+    color: white;
+    font-size: 13px;
+    padding: 5px;
+    /* to prevent user from selecting the text or element */
+    user-select:none;
+    z-index: 99; 
+}
+
+#score p {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+/* when a button is clicked/tapped or accessed through 'tab' key */
+button:focus {
+    outline: none;
+    box-shadow: 0 0 3px 2px rgba(100,150,255,0.7);
+}
+
+#scoreCard {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: 1em;
+    text-align: center;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    z-index: 999;
+
+}
+
+#scoreCard > div { 
+    width: 100%;
+    max-width: 350px;
+    padding: 1.5em;
+    background:white;
+}
+
+#scoreCard h1 {
+    font-size: 3em;
+    font-weight: 600;
+}
+
+#scoreCard button {
+    width: 100%;
+    margin-top: 1.5em;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 2em;
+    padding: 1em 2em;
+    background: dodgerblue;
+    transition: all 0.3s ease
+}
+
+#scoreCard button:hover {
+    opacity: 0.8;
+}
+
+#viewProfile {
+    position: fixed;
+    left: 0;
+    top: 5%;
+    bottom:0;
+    width: 9%;
+    height:70%;
+    background-color: rgb(161, 154, 156);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+   
+}
+
+#viewProfile button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: #f1f1f1;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    color: #221145;
+    transition: all 0.3s ease;
+}
+
+
+#popUp {
+    position : fixed;
+    top: 70%;
+    left:50%;
+    transform: translate(-50%, -50%); 
+    background-color: rgba(0,0,0,0.5);
+    color: #9d9595;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    z-index: 1000;
+    user-select: none;
+    font-size: 1.5rem;
+}
+
+
+canvas {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+
+
+
+

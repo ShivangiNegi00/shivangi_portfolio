@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shivangi Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="score">
+    <p>Score :
+        <span class="topboard" id="scoreCurr">0</span>
+    </p>    
+    <p >Highest: 
+        <span class="topboard" id="highScore">0</span>
+    </p>
+    </div>
+
+    <div id="viewProfile" style="display:none;">
+        <button id="about"style="display:none;">About me </button>
+        <button id="education"style="display:none;">Education</button>
+        <button id="skills" style="display:none;">Skills</button>
+        <button id="projects" style="display:none;">Projects</button>
+        <button id="experience" style="display:none;">Experience</button>
+        <button id="contact" style="display:none;">Contact me </button>
+        <!-- few icons for Social media  -->
+    </div>
+
+    <!-- message diaplyed everytime a button gets unlocked -->
+    <div id="popUp" style="display:none;">  </div>     
+
+<!-- About me secton -->
+ <div id="aboutMe" class="sections">
+ <div class="section-content">
+    <span class="closeBtn"  onclick="c"></span>
+
+ </div>
+
+ </div>
+    <div id="scoreCard" >
+        <div>
+            <h1 id="finalScore">0</h1>
+            <p>Points</p>
+            <div>
+                <button id="startGameBtn">Start Game</button>
+            </div>
+        </div>
+    </div>
+
+    <canvas></canvas>
+    <script src="script.js"></script>
+
+    
+</body>
+</html>
