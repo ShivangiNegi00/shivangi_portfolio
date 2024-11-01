@@ -92,20 +92,30 @@ class Particle extends Shooter{
 // personal touch - the score checking function to reveal profile
 const buttonRequirements = {
     about: {score:2000, unlocked:false,message:"cleared level 0 , about section unlocked"},
-    educaton : {score:4000, unlocked:false,message:"cleared level 1 , education section unlocked"},
+    education : {score:4000, unlocked:false,message:"cleared level 1 , education section unlocked"},
     skills : {score:6000, unlocked:false,message:"cleared level 2, skills section unlocked"},
     projects : {score:8000, unlocked:false,message:"cleared level 3, projects section unlocked"},
     experience : {score:10000, unlocked:false,message:"cleared level 4, experience section unlocked"},
     contact : {score:13000, unlocked:false,message:"cleared level 5, contact section unlocked and now that you have unlocked all sections have fun checking them out"},
 };
 
+function openSection(sectionID) {
+    document.getElementById(sectionID).style.display = "flex";
+}
+
+function closeSection(sectionID) {
+    document.getElementById(sectionID).style.display = "none";
+}
+
+
 function checkScore(score) {
    Object.keys(buttonRequirements).forEach( (buttonID) => {
     const requirement = buttonRequirements[buttonID];
 
-    if(score = requirement.score && !requirement.unlocked) {
+    if(score >= requirement.score && !requirement.unlocked) {
         requirement.unlocked = true;
         document.getElementById(buttonID).style.display = "block";
+           
 
         //display custom message 
         displayUnlockMessage(requirement.message);
@@ -131,6 +141,8 @@ function displayUnlockMessage(message) {
     }, 3000);
 }
 
+
+
 // ------- the end --------
 
 
@@ -139,7 +151,7 @@ function updateScore(times = 1) {
     spawnTime *= 0.999 // decrease the spawn time of the enemies
     score += 100 * times // increase the score by 100 times the number of enemies hit
     scoreCurr.innerHTML = score // update the score in the DOM
-    checkScore(highest) // check if the score is enough to unlock the profile
+    checkScore(score) // check if the score is enough to unlock the profile
 }
 
 
@@ -285,7 +297,12 @@ function stopGame() {
         highest = score 
         localStorage.setItem('highest', highest)
     }
+    checkScore(score)
     finalScore.innerHTML = score //total score on the scorecard
+
+
+    console.log("Button Requirements:", buttonRequirements)
+
 
 }
 
@@ -311,9 +328,7 @@ function spanEnemies() {
    }, spawnTime)
 }
 
-if (Array.from(buttons).some(button => button.classList.contains('visible'))) {
-    document.getElementById('viewProfile').style.display = 'block';
-  }
+
 
 // Start new Game 
 function startGame() {
@@ -326,10 +341,8 @@ function startGame() {
     spanEnemies()
     scoreCard.style.display = 'none'
     viewProfile.style.display = 'none'
+     
 
-    if (Array.from(buttons).some(button => button.classList.contains('visible'))) {
-        document.getElementById('viewProfile').style.display = 'block';
-      }
 }
 
 // start Game Button 

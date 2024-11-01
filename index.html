@@ -16,13 +16,13 @@
     </p>
     </div>
 
-    <div id="viewProfile" style="display:none;">
-        <button id="about"style="display:none;">About me </button>
-        <button id="education"style="display:none;">Education</button>
-        <button id="skills" style="display:none;">Skills</button>
-        <button id="projects" style="display:none;">Projects</button>
-        <button id="experience" style="display:none;">Experience</button>
-        <button id="contact" style="display:none;">Contact me </button>
+    <div id="viewProfile" >
+        <button id="about"style="display:none;" onclick="openSection('aboutMe')">About me </button>
+        <button id="education"style="display:none;" onclick="openSection('educationMe')">Education</button>
+        <button id="skills" style="display:none;" onclick="openSection('skillsMe')">Skills</button>
+        <button id="projects" style="display:none;" onclick="openSection('projectsMe')">Projects</button>
+        <button id="experience" style="display:none;" onclick="openSection('experienceMe')">Experience</button>
+        <button id="contact" style="display:none;" onclick="openSection('contactMe')">Contact me </button>
         <!-- few icons for Social media  -->
     </div>
 
@@ -30,13 +30,100 @@
     <div id="popUp" style="display:none;">  </div>     
 
 <!-- About me secton -->
- <div id="aboutMe" class="sections">
+ <div id="aboutMe" class="sections"  >
  <div class="section-content">
-    <span class="closeBtn"  onclick="c"></span>
+    <span class="closeBtn"  onclick="closeSection('aboutMe')">&times</span>
+    <h2> Hello, i am Shivangi Negi</h2>
+    <p> A 22 years old girl , currently pusruing masters degree in Informatics . i am passionate about web develpment and coding</p>
+ </div>
+</div>
 
+
+<!-- Skills section -->
+<div id="skillsMe" class="sections" >
+    <div class="content">
+        <span class="closeBtn"  onclick="closeSection('skillsMe')">&times</span>
+        <h2> Skills</h2>
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>React</li>
+            <li>Java</li>
+            <li>Python</li>
+            <li>SQL</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Education section -->
+<div id="educationMe" class="sections" >
+    <div class="content">
+        <span class="closeBtn"  onclick="closeSection('educationMe')">&times</span>
+        <h2> Education</h2>
+        <ul>
+            <br>
+            <li> Bachelors in Electronics </li>
+             <ul> university : Delhi university</ul>
+             <ul> Year of passing : 2023</ul>
+             <!-- line break -->
+                <br>
+            <li> Masters in Informatics</li>
+                <ul> university : Delhi university</ul>
+                <ul> Year of passing : 2025</l>
+        </ul>
+    </div>
+</div>
+
+<!-- Project section -->
+<div id="projectsMe" class="sections" >
+    <div class="content">
+        <span class="closeBtn"  onclick="closeSection('projectsMe')">&times</span>
+        <h2> Projects</h2>
+        <ul>
+            <br>
+            <li style="font-weight: 700;"> Ecommerce website</li>
+             <ul>made with HTML, CSS and javascript . </ul>
+             <br>
+            <li style="font-weight: 700;"> StaffHub</li>
+            <ul> built with react , java Springboot and SQL . features include - add , delete or edit an employees information</ul>
+        </ul>
+    </div>
+</div>
+
+
+<!-- Experience section -->
+<div id="experienceMe" class="sections" >
+    <div class="content">
+        <span class="closeBtn"  onclick="closeSection('experienceMe')">&times</span>
+        <h2> Experience</h2>
+        <ul>
+            <br>
+            <li style="font-weight: 700;"> Research intern at multiverz</li>
+            <br>
+             <li> the role involved researching about best practices of organizations of diverse backgrounds</li>
+           
+        </ul>
+    </div>
+</div>
+
+
+<!-- Contact section -->
+<div id="contactMe" class="sections" >
+    <div class="content">
+        <span class="closeBtn"  onclick="closeSection('contactMe')">&times</span>
+        <h2> Contact Me</h2>
+        <ul>
+            <br>
+            <li> Email : negishivangi647@gmail.com </li>
+            <br>
+            <li>github : <a href="https://github.com/ShivangiNegi00"> https://github.com/ShivangiNegi00</a></li>
+            <br>
+            <li>linkedin : <a href="https://www.linkedin.com/in/shivangi-negi/">https://www.linkedin.com/in/shivangi-negi/</a> </li>
+        </ul>
+    </div>
  </div>
 
- </div>
     <div id="scoreCard" >
         <div>
             <h1 id="finalScore">0</h1>
@@ -48,6 +135,7 @@
     </div>
 
     <canvas></canvas>
+
     <script src="script.js"></script>
 
     
